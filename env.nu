@@ -101,4 +101,6 @@ $env.NU_PLUGIN_DIRS = [
 # source ($nu.default-config-dir | path join 'custom.nu')
 
 mkdir ~/.cache/starship
+mkdir ~/.cache/zoxide
 starship init nu | save -f ~/.cache/starship/init.nu
+zoxide init nushell --cmd cd | save -f ~/.cache/zoxide/init.nu
