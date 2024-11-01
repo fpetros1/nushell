@@ -229,8 +229,8 @@ $env.config = {
     }
 
     cursor_shape: {
-        emacs: block # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (line is the default)
-        vi_insert: blink_line # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (block is the default)
+        emacs: inherit # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (line is the default)
+        vi_insert: blink_block # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (block is the default)
         vi_normal: blink_block # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (underscore is the default)
     }
 
@@ -908,4 +908,9 @@ alias vim = launch-editor
 alias v = launch-editor
 alias cat = bat
 alias cls = command clear
+
+# environment
+$env.PROMPT_INDICATOR_VI_INSERT = $'(ansi green)󰘧 (ansi reset)'
+$env.PROMPT_INDICATOR_VI_NORMAL = $'(ansi red)󰘧 (ansi reset)'
+
 
