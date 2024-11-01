@@ -100,7 +100,12 @@ $env.NU_PLUGIN_DIRS = [
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense'
+
 mkdir ~/.cache/starship
 mkdir ~/.cache/zoxide
+mkdir ~/.cache/carapace
+
 starship init nu | save -f ~/.cache/starship/init.nu
 zoxide init nushell --cmd cd | save -f ~/.cache/zoxide/init.nu
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
